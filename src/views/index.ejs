@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+</head>
+<body>
+    <h1>PokeDex</h1>
+
+    <% if (!pokemon) { %> 
+        <ul>
+            <% results.forEach(pokemon => { %>
+                <li><a href="/?pokemon=<%= pokemon.name %>"><%= pokemon.name %></a></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <h2>movimentos - <%= pokemon.name %></h2>
+        <ul>
+            <% pokemon.moves.forEach(move => { %>
+                <li><%= move %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+</body>
+</html>
